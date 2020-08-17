@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30404.54
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTCBlazor.Server", "Server\BTCBlazor.Server.csproj", "{FFA886D2-67AE-486E-BBBE-CB7077DE372D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTCBlazor.Server", "Server\BTCBlazor.Server.csproj", "{FFA886D2-67AE-486E-BBBE-CB7077DE372D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTCBlazor.Client", "Client\BTCBlazor.Client.csproj", "{00DADDB8-E412-47C5-B7FD-88B936CE3970}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTCBlazor.Client", "Client\BTCBlazor.Client.csproj", "{00DADDB8-E412-47C5-B7FD-88B936CE3970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTCBlazor.Shared", "Shared\BTCBlazor.Shared.csproj", "{3C449FB3-A258-4B62-97AA-BEDDE0BF0A48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTCBlazor.Shared", "Shared\BTCBlazor.Shared.csproj", "{3C449FB3-A258-4B62-97AA-BEDDE0BF0A48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
