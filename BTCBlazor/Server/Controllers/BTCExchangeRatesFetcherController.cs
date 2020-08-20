@@ -24,10 +24,10 @@ namespace BTCBlazor.Server.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<CurrencyCode> Get()
+        public Currencies Get()
         {
 
-            var exchangeRates = JsonSerializer.Deserialize<IEnumerable<CurrencyCode>>(apiUrl);
+            var exchangeRates = JsonSerializer.Deserialize<Currencies>(apiUrl);
 
             return exchangeRates;
 
