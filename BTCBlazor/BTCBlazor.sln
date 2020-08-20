@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTCBlazor.Client", "Client\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTCBlazor.Shared", "Shared\BTCBlazor.Shared.csproj", "{3C449FB3-A258-4B62-97AA-BEDDE0BF0A48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTCBlazor.ClientTests", "BTCBlazor.ClientTests\BTCBlazor.ClientTests.csproj", "{447FE8D4-3117-4577-8380-DD9F35DB4389}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3C449FB3-A258-4B62-97AA-BEDDE0BF0A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C449FB3-A258-4B62-97AA-BEDDE0BF0A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C449FB3-A258-4B62-97AA-BEDDE0BF0A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{447FE8D4-3117-4577-8380-DD9F35DB4389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{447FE8D4-3117-4577-8380-DD9F35DB4389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{447FE8D4-3117-4577-8380-DD9F35DB4389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{447FE8D4-3117-4577-8380-DD9F35DB4389}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
