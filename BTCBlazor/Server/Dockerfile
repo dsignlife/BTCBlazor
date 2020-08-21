@@ -7,13 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY *.csproj ./
-RUN dotnet restore
-COPY . ./
-RUN dotnet build -c Release -o /app/build
+COPY ["BTCBlazor.Server.csproj", "Server/"]
+COPY ["Client/BTCBlazor.Client.csproj", "./"]
+COPY ["Shared/BTCBlazor.Shared.csproj", "./"]
+RUN dotnet restore "Server/BTCBlazor.Server.csproj"
+COPY . .
+WORKDIR "/src/Server"
+RUN dotnet build "BTCBlazor.Server.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish -c Release -o /app/publish
+RUN dotnet publish "BTCBlazor.Server.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
