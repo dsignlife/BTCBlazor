@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: '77cf72d0-9e2f-4050-8ca0-633ba5444fc4'
   imageRepository: 'btcblazorpipe'
   containerRegistry: 'btcblazorserver.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: 'BTCBlazor/Dockerfile'
   tag: '$(Build.BuildId)'
   
   # Agent VM image name
