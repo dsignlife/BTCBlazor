@@ -1,0 +1,27 @@
+﻿@page "/maingraphoverview"
+@inherits MainGraphOverviewBase
+
+
+<h3>MainGraphOverview</h3>
+
+@if (CurrencyList == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h4>USD</h4>
+    @CurrencyList.USD.Last
+    @CurrencyList.USD.Buy
+    @CurrencyList.USD.Sell
+    @CurrencyList.USD.Symbol
+
+
+    <button class="btn btn-primary" @onclick="@((a) => getLastest())">Click me</button>
+
+}
+
+
+@code {
+
+}

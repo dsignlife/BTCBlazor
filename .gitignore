@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/BTCBlazor/Server/Properties/ServiceDependencies
+/BTCBlazor/Client/Properties/ServiceDependencies

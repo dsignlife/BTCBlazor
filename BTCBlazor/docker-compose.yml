@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  btcblazor.server:
+    image: ${DOCKER_REGISTRY-}btcblazorserver
+    build:
+      context: .
+      dockerfile: Server/Dockerfile
