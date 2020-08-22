@@ -28,22 +28,24 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
+    - script: |
+        docker build -f Dockerfile.build -t $(dockerId)/dotnetcore-build:$BUILD_BUILDID .
+        docker run --name dotnetcoreapp --rm -d $(dockerId)/dotnetcore-build:$BUILD_BUILDID
+        docker cp dotnetcoreapp:app/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
+        docker cp dotnetcoreapp:app/BTCBlazor/out $(System.DefaultWorkingDirectory)
+        docker stop dotnetcoreapp
 
-    - task: Docker@2
-      displayName: Build and push an image to container registry
-      inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
     - task: PublishTestResults@2
-      displayName: Publish TestResult
       inputs:
-
         testRunner: VSTest
         testResultsFiles: '**/*.trx'
-        searchFolder: $(Build.ArtifactStagingDirectory)
-        failTaskOnFailedTests: true      
+        failTaskOnFailedTests: true
+
+    - script: |
+        docker build -f Dockerfile -t $(dockerId).azurecr.io/dotnetcore-sample:$BUILD_BUILDID .
+        docker login -u $(dockerId) -p $pswd $(dockerid).azurecr.io
+        docker push $(dockerId).azurecr.io/dotnetcore-sample:$BUILD_BUILDID 
+      env:
+        pswd: $(dockerPassword)
+   
 
