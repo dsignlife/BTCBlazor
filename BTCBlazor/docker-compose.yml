@@ -5,4 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}btcblazorserver
     build:
       context: .
-      dockerfile: Server/Dockerfile
+      dockerfile: Dockerfile
