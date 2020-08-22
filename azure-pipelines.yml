@@ -38,9 +38,9 @@ stages:
         tags: |
           $(tag)
     - task: PublishTestResults@2
-      displayName: Publish registry
+      displayName: Publish TestResult
       inputs:
         testRunner: VSTest
-        testResultsFiles: 'BTCBlazor.ClientTests/TestResults/*.trx'
+        testResultsFiles: 'BTCBlazor/BTCBlazor.ClientTests/TestResults/*.trx'
         failTaskOnFailedTests: true      
 
