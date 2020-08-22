@@ -19,7 +19,7 @@ WORKDIR "/src/Server"
 RUN dotnet build "BTCBlazor.Server.csproj" -c Release -o /app/build
 
 WORKDIR "/src/BTCBlazor.ClientTests"
-RUN dotnet test "BTCBlazor.ClientTests.csproj" -c Release -o /app/build --logger "trx;LogFileName=testresults.trx"
+RUN dotnet test "BTCBlazor.ClientTests.csproj" -c Release --logger "trx;LogFileName=testresults.trx"
 
 FROM build AS publish
 RUN dotnet publish -c Release -o /app/publish
@@ -27,5 +27,5 @@ RUN dotnet publish -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /app/ .
 ENTRYPOINT ["dotnet", "BTCBlazorApp.dll"]
