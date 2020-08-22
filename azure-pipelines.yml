@@ -29,8 +29,8 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-        docker build -f Dockerfile.build -t $(dockerId)/btcblazorserver:latest .
-        docker run --name btcblazorserver --rm -d $(dockerId)/btcblazorserver:latest
+        docker build -f Dockerfile.build -t $(dockerId).azurecr.io/btcblazorserver:latest .
+        docker run --name btcblazorserver --rm -d $(dockerId).azurecr.io/btcblazorserver:latest
         docker cp btcblazorserver:app/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
         docker cp btcblazorserver:app/BTCBlazor/out $(System.DefaultWorkingDirectory)
         docker stop btcblazorserver
