@@ -29,7 +29,7 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-        docker build -f BTCBlazor/Dockerfile.build -t $(dockerId)/btcblazorserver:$BUILD_BUILDID .
+        docker build -f BTCBlazor/Dockerfile -t $(dockerId)/btcblazorserver:$BUILD_BUILDID .
         docker run --name btcblazorserver --rm -d $(dockerId)/btcblazorserver:$BUILD_BUILDID
         docker cp btcblazorserver:app/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
         docker cp btcblazorserver:app/BTCBlazor/out $(System.DefaultWorkingDirectory)
