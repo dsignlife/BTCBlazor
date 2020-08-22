@@ -41,6 +41,6 @@ stages:
       displayName: Publish TestResult
       inputs:
         testRunner: VSTest
-        testResultsFiles: 'BTCBlazor/BTCBlazor.ClientTests/TestResults/*.trx'
+        testResultsFiles: '**/*.trx'
         failTaskOnFailedTests: true      
 
