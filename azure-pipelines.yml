@@ -31,8 +31,8 @@ stages:
     - script: |
         docker build -f Dockerfile.build -t $(dockerId)/dotnetcore-build:$BUILD_BUILDID .
         docker run --name dotnetcoreapp --rm -d $(dockerId)/dotnetcore-build:$BUILD_BUILDID
-        docker cp dotnetcoreapp:app/dotnetcore-tests/TestResults $(System.DefaultWorkingDirectory)
-        docker cp dotnetcoreapp:app/dotnetcore-sample/out $(System.DefaultWorkingDirectory)
+        docker cp dotnetcoreapp:app/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
+        docker cp dotnetcoreapp:app/BTCBlazor/out $(System.DefaultWorkingDirectory)
         docker stop dotnetcoreapp
 
     - task: PublishTestResults@2
