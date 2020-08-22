@@ -28,7 +28,6 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
@@ -41,9 +40,8 @@ stages:
     - task: PublishTestResults@2
       displayName: Publish TestResult
       inputs:
-
         testRunner: VSTest
         testResultsFiles: '**/*.trx'
-        searchFolder: $(Build.ArtifactStagingDirectory)
+        searchFolder: '$(Build.ArtifactStagingDirectory)/testresults'
         failTaskOnFailedTests: true      
 
