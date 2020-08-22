@@ -42,6 +42,6 @@ stages:
       inputs:
         testRunner: VSTest
         testResultsFiles: '**/*.trx'
-        searchFolder: $(System.DefaultWorkingDirectory)
+        searchFolder: BTCBlazor
         failTaskOnFailedTests: true      
 
