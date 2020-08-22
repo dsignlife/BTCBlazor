@@ -30,7 +30,7 @@ stages:
     steps:
     - script: |
         docker build -f BTCBlazor/Dockerfile.build -t $(dockerId):$(build.buildid) . 
-        docker run --name btcblazorserver --rm -d $(dockerId).azurecr.io:$(build.buildid) 
+        docker run --name btcblazorserver --rm -d $(dockerId):$(build.buildid) 
         docker cp btcblazorserver:app/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
         docker cp btcblazorserver:app/BTCBlazor/out $(System.DefaultWorkingDirectory)
         docker stop btcblazorserver
