@@ -15,7 +15,7 @@ COPY ["BTCBlazor/BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj", "BTCBlazor
 RUN dotnet restore "Server/BTCBlazor.Server.csproj"
 RUN dotnet restore "BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj"
 COPY . .
-
+WORKDIR "/src/Server"
 RUN dotnet build "Server/BTCBlazor.Server.csproj" -c Release -o /app/build
 
 WORKDIR "/src/BTCBlazor.ClientTests"
