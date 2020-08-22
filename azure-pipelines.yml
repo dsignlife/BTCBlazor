@@ -38,21 +38,12 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-
-    - script: dir
-      workingDirectory: $(Agent.BuildDirectory)
-      displayName: List contents of a folder
-
-    - task: CmdLine@2
-      displayName: List contents of a folder
-      inputs:
-        script: dir
-        
     - task: PublishTestResults@2
       displayName: Publish TestResult
       inputs:
 
         testRunner: VSTest
         testResultsFiles: '**/*.trx'
-        searchFolder: '$(Agent.BuildDirectory)'
+        searchFolder: $(Build.ArtifactStagingDirectory)
         failTaskOnFailedTests: true      
+
