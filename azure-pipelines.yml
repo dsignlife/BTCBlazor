@@ -37,14 +37,10 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-
-- stage: Test
-  jobs:  
-  - job: Build
-    displayName: Build
-    steps:
     - task: PublishTestResults@2
+      displayName: Publish registry
       inputs:
         testRunner: VSTest
         testResultsFiles: '**/*.trx'
-        failTaskOnFailedTests: true
+        failTaskOnFailedTests: true      
+
