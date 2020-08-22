@@ -48,6 +48,6 @@ stages:
       displayName: Publish TestResult
       inputs:
         testRunner: VSTest
-        testResultsFiles: '**/testresults.trx'
+        testResultsFiles: '**/*.trx'
         searchFolder: '$(Agent.BuildDirectory)'
         failTaskOnFailedTests: true      
