@@ -16,7 +16,7 @@ RUN dotnet restore "Server/BTCBlazor.Server.csproj"
 RUN dotnet restore "BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj"
 COPY . .
 
-RUN dotnet build "BTCBlazor.Server.csproj" -c Release -o /app/build
+RUN dotnet build "Server/BTCBlazor.Server.csproj" -c Release -o /app/build
 
 WORKDIR "/src/BTCBlazor.ClientTests"
 RUN dotnet test "BTCBlazor.ClientTests.csproj" -c Release --logger "trx;LogFileName=testresults.trx"
