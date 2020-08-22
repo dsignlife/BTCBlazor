@@ -33,7 +33,7 @@ stages:
         docker run --name btcblazorserver --rm -d $(dockerId)/btcblazorserver:latest
         docker cp btcblazorserver:app/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
         docker cp btcblazorserver:app/BTCBlazor/out $(System.DefaultWorkingDirectory)
-        docker stop dotnetcoreapp
+        docker stop btcblazorserver
 
     - task: PublishTestResults@2
       inputs:
