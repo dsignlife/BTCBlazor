@@ -19,7 +19,7 @@ WORKDIR "/src/Server"
 RUN dotnet build "BTCBlazor.Server.csproj" -c Release -o /app/build
 
 WORKDIR "/src/BTCBlazor.ClientTests"
-RUN dotnet test "BTCBlazor.ClientTests.csproj" -c Release -o /app/publish --logger "trx;LogFileName=testresults.trx"
+RUN dotnet test "BTCBlazor.ClientTests.csproj" -c Release -o /app/build --logger "trx;LogFileName=testresults.trx"
 
 FROM build AS publish
 RUN dotnet publish -c Release -o /app/publish
