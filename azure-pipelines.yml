@@ -29,7 +29,7 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-        docker build -f BTCBlazor/Dockerfile.build -t $(dockerId)/btcblazorserver:$BUILD_BUILDID .
+        docker build -f BTCBlazor/Dockerfile -t $(dockerId)/btcblazorserver:$BUILD_BUILDID .
         docker run --name dotnetcoreapp --rm -d $(dockerId)/btcblazorserver:$BUILD_BUILDID
         docker cp dotnetcoreapp:app/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
         docker cp dotnetcoreapp:app/BTCBlazor/out $(System.DefaultWorkingDirectory)
