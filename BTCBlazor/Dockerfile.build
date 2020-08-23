@@ -5,12 +5,12 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
+FROM microsoft/dotnet:2.1-sdk AS build
 WORKDIR /src
-COPY ["Server/BTCBlazor.Server.csproj", "Server/"]
-COPY ["Client/BTCBlazor.Client.csproj", "Client/"]
-COPY ["Shared/BTCBlazor.Shared.csproj", "Shared/"]
-COPY ["BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj", "BTCBlazor.ClientTests/"]
+COPY ["BTCBlazor/Server/BTCBlazor.Server.csproj", "Server/"]
+COPY ["BTCBlazor/Client/BTCBlazor.Client.csproj", "Client/"]
+COPY ["BTCBlazor/Shared/BTCBlazor.Shared.csproj", "Shared/"]
+COPY ["BTCBlazor/BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj", "BTCBlazor.ClientTests/"]
 COPY . ./
 
 RUN dotnet restore "BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj"
