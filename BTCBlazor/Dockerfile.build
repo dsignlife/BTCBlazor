@@ -11,6 +11,7 @@ COPY ["BTCBlazor/Server/BTCBlazor.Server.csproj", "Server/"]
 COPY ["BTCBlazor/Client/BTCBlazor.Client.csproj", "Client/"]
 COPY ["BTCBlazor/Shared/BTCBlazor.Shared.csproj", "Shared/"]
 COPY ["BTCBlazor/BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj", "BTCBlazor.ClientTests/"]
+COPY . ./
 
 RUN dotnet restore "BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj"
 RUN dotnet restore "Server/BTCBlazor.Server.csproj"
