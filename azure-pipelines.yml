@@ -42,7 +42,7 @@ stages:
       inputs:
         testRunner: VSTest
         testResultsFiles: '**/*.trx'
-        searchFolder: '$(System.DefaultWorkingDirectory)/testresults'
+        searchFolder: '$(Agent.HomeDirectory)'
         publishRunAttachments: true
         failTaskOnFailedTests: true      
 
