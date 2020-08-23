@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
-using BTCBlazor.Client.Services;
+using BTCBlazor.Shared.Services;
 using System;
 
 namespace BTCBlazor.Server

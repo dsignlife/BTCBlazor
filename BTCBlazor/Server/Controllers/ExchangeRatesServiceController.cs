@@ -1,5 +1,4 @@
-﻿using BTCBlazor.Shared;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net.Http;
 using System.Text.Json;
-using BTCBlazor.Client.Services;
+using BTCBlazor.Shared.Services;
+using BTCBlazor.Shared;
 
 namespace BTCBlazor.Server.Controllers
 {
