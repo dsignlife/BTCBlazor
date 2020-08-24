@@ -32,10 +32,7 @@ stages:
         docker build -f BTCBlazor/Dockerfile.build -t $(dockerId)/btcblazorserver:$(build.buildid) . 
         docker run --name btcblazorserver --rm -d $(dockerId)/btcblazorserver:$(build.buildid) 
         docker container ls 
-        docker exec btcblazorserver /bin/bash
-        docker run --entrypoint sh btcblazorserver
-        docker cp btcblazorserver:app/BTCBlazor/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
-        docker cp btcblazorserver:app/BTCBlazor/BTCBlazor/out $(System.DefaultWorkingDirectory)
+        docker cp btcblazorserver:app $(System.DefaultWorkingDirectory)
         docker stop btcblazorserver
 
 
