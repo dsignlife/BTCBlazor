@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Shouldly;
 
 
-namespace BTCBlazor.Client.Services.Tests
+namespace BTCBlazor.Shared.Services.Tests
 {
     [TestClass()]
     public class ExchangeRatesServiceTests

@@ -1,4 +1,4 @@
-﻿using BTCBlazor.Client.Services;
+﻿using BTCBlazor.Shared.Services;
 using BTCBlazor.Shared;
 using Microsoft.AspNetCore.Components;
 using System;
