@@ -40,8 +40,5 @@ stages:
     - task: PublishTestResults@2
       displayName: Publish TestResult
       inputs:
-        testRunner: VSTest
+        testRunner: 'VSTest'
         testResultsFiles: '**/*.trx'
-        searchFolder: '$(Build.ArtifactStagingDirectory)/testresults'
-        failTaskOnFailedTests: true      
-
