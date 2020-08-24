@@ -29,11 +29,11 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - script: |
-        docker build -f BTCBlazor/Dockerfile.build -t $(dockerId)/blazorserver:$(build.buildid) . 
-        docker run --name btcblazor --rm -d $(dockerId)/blazorserver:$(build.buildid) 
-        docker cp btcblazor:/src/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
-        docker cp btcblazor:/src/BTCBlazor/out $(System.DefaultWorkingDirectory)
-        docker stop btcblazor
+        docker build -f BTCBlazor/Dockerfile.build -t $(dockerId)/btcblazorserver:$(build.buildid) . 
+        docker run --name btcblazorserver --rm -d $(dockerId)/btcblazorserver:$(build.buildid) 
+        docker cp btcblazorserver:app/src/BTCBlazor.ClientTests/TestResults/ $(System.DefaultWorkingDirectory)
+        docker cp btcblazorserver:app/src/BTCBlazor/out $(System.DefaultWorkingDirectory)
+        docker stop btcblazorserver
 
 
     - task: PublishTestResults@2
