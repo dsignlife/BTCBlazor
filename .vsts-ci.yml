@@ -30,10 +30,11 @@ stages:
     steps:
     - script: |
         docker build -f BTCBlazor/Dockerfile.build -t $(dockerId)/btcblazorserver:$(build.buildid) . 
-        docker run --name btcblazorserver --rm -d $(dockerId)/btcblazorserver:$(build.buildid) 
+        docker run --name btcblazorpipe --rm -d $(dockerId)/btcblazorserver:$(build.buildid) 
         docker container ls 
-        docker cp btcblazorserver:Startup.cs $(System.DefaultWorkingDirectory)
-        docker stop btcblazorserver
+
+        docker cp btcblazorpipe:/bin/sh/. $(System.DefaultWorkingDirectory)
+        docker stop btcblazorpipe
 
 
     - task: PublishTestResults@2
