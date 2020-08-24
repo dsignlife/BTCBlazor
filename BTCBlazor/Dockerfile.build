@@ -12,6 +12,7 @@ COPY ["BTCBlazor/Client/", "Client/"]
 COPY ["BTCBlazor/Shared/", "Shared/"]
 COPY ["BTCBlazor/BTCBlazor.ClientTests/", "BTCBlazor.ClientTests/"]
 RUN ls
+RUN dir #Added
 
 
 RUN dotnet restore "BTCBlazor.ClientTests/BTCBlazor.ClientTests.csproj"
@@ -33,4 +34,7 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/ .
 RUN ls
+RUN dir #Added
 ENTRYPOINT ["dotnet", "BTCBlazorApp.dll", ]
+
+
