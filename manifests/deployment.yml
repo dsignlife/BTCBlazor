@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: btcblazorkubernetes 
 spec:
+  selector:
+    matchLabels:
+      app: btcblazorkubernetes
   replicas: 1
   template:
     metadata:
@@ -14,6 +17,3 @@ spec:
           image: btcblazorserver.azurecr.io/btcblazorkubernetes
           ports:
           - containerPort: 44443
-    selector:
-      matchLabels:
-      app: btcblazorkubernetes
