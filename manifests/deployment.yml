@@ -16,4 +16,4 @@ spec:
         - name: btcblazorkubernetes 
           image: btcblazorserver.azurecr.io/btcblazorkubernetes
           ports:
-          - containerPort: 44443
+          - containerPort: 5000
